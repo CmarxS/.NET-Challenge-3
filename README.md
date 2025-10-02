@@ -1,26 +1,27 @@
-# ??? MottoMap API
 
-Sistema de Gest„o de Frota de Motos - API REST completa desenvolvida em .NET 8.0 com Entity Framework Core e Oracle Database.
+# üöó MottoMap API
 
-## ?? Vis„o Geral
+Sistema de Gest√£o de Frota de Motos - API REST completa desenvolvida em .NET 8.0 com Entity Framework Core e Oracle Database.
 
-A **MottoMap API** È uma soluÁ„o completa para gerenciamento de frotas de motocicletas, oferecendo recursos avanÁados de CRUD, paginaÁ„o, filtros e HATEOAS para navegabilidade da API.
+## üìã Vis√£o Geral
 
-### ?? Funcionalidades Principais
+A **MottoMap API** √© uma solu√ß√£o completa para gerenciamento de frotas de motocicletas, oferecendo recursos avan√ßados de CRUD, pagina√ß√£o, filtros e HATEOAS para navegabilidade da API.
 
-- ? **Gest„o de Filiais**: Controle de unidades por cidade/estado
-- ? **Gest„o de Funcion·rios**: Cadastro com validaÁ„o de email ˙nico
-- ? **Gest„o de Motos**: Controle de frota com placas antigas e Mercosul
-- ? **Relacionamentos**: Filiais ? Funcion·rios e Motos
-- ? **Filtros AvanÁados**: Busca por m˙ltiplos critÈrios
-- ? **EstatÌsticas**: RelatÛrios de ocupaÁ„o por filial
+### üîë Funcionalidades Principais
 
-## ??? Arquitetura
+- üöß **Gest√£o de Filiais**: Controle de unidades por cidade/estado
+- üë©‚Äçüíª **Gest√£o de Funcion√°rios**: Cadastro com valida√ß√£o de email √∫nico
+- üèçÔ∏è **Gest√£o de Motos**: Controle de frota com placas antigas e Mercosul
+- üîó **Relacionamentos**: Filiais ‚Üî Funcion√°rios e Motos
+- üîç **Filtros Avan√ßados**: Busca por m√∫ltiplos crit√©rios
+- üìä **Estat√≠sticas**: Relat√≥rios de ocupa√ß√£o por filial
 
-### Padrıes Implementados
+## üèõÔ∏è Arquitetura
+
+### Padr√µes Implementados
 - **Repository Pattern** para acesso a dados
-- **DTO Pattern** para transferÍncia de dados
-- **Mapper Pattern** para conversıes
+- **DTO Pattern** para transfer√™ncia de dados
+- **Mapper Pattern** para convers√µes
 - **HATEOAS** para descoberta de recursos
 - **RESTful API** com status codes apropriados
 
@@ -28,24 +29,24 @@ A **MottoMap API** È uma soluÁ„o completa para gerenciamento de frotas de motoci
 - **.NET 8.0** - Framework principal
 - **Entity Framework Core 9.0** - ORM
 - **Oracle Database** - Banco de dados
-- **Swagger/OpenAPI** - DocumentaÁ„o da API
-- **C# 12** - Linguagem de programaÁ„o
+- **Swagger/OpenAPI** - Documenta√ß√£o da API
+- **C# 12** - Linguagem de programa√ß√£o
 
-## ?? Modelo de Dados
+## üìö Modelo de Dados
 
 ### Entidades Principais
 
-#### ?? Filiais (`NET_C3_Filial`)
+#### üè¢ Filiais (`NET_C3_Filial`)
 ```csharp
 - IdFilial (PK, Identity)
 - Nome (required, max 100 chars)
 - Endereco (required, max 200 chars)
 - Cidade (required, max 80 chars)
-- Estado (required, 2 chars, mai˙sculo)
+- Estado (required, 2 chars, mai√∫sculo)
 - CEP (optional, max 10 chars, formato: 00000-000)
 ```
 
-#### ????? Funcion·rios (`NET_C3_Funcionario`)
+#### üßë‚Äçüíº Funcion√°rios (`NET_C3_Funcionario`)
 ```csharp
 - IdFuncionario (PK, Identity)
 - Nome (required, max 100 chars)
@@ -54,7 +55,7 @@ A **MottoMap API** È uma soluÁ„o completa para gerenciamento de frotas de motoci
 - Funcao (required, max 80 chars)
 ```
 
-#### ??? Motos (`NET_C3_Motos`)
+#### üèçÔ∏è Motos (`NET_C3_Motos`)
 ```csharp
 - IdMoto (PK, Identity)
 - Marca (required, max 50 chars)
@@ -67,45 +68,45 @@ A **MottoMap API** È uma soluÁ„o completa para gerenciamento de frotas de motoci
 ```
 
 ### Relacionamentos
-- **Filial** 1:N **Funcion·rios**
+- **Filial** 1:N **Funcion√°rios**
 - **Filial** 1:N **Motos**
 
-## ?? Endpoints da API
+## üåê Endpoints da API
 
 ### Base URL
 - **Development**: `https://localhost:7001/api/v1`
 
-### ?? Filiais (`/filiais`)
+### üè¢ Filiais (`/filiais`)
 
-| MÈtodo | Endpoint | DescriÁ„o |
+| M√©todo | Endpoint | Descri√ß√£o |
 |--------|----------|-----------|
 | GET | `/filiais` | Lista paginada de filiais |
 | GET | `/filiais/{id}` | Busca filial por ID |
 | GET | `/filiais/{id}/detalhes` | Filial com relacionamentos |
-| GET | `/filiais/{id}/estatisticas` | EstatÌsticas da filial |
+| GET | `/filiais/{id}/estatisticas` | Estat√≠sticas da filial |
 | GET | `/filiais/cidade/{cidade}` | Filiais por cidade |
 | GET | `/filiais/estado/{estado}` | Filiais por estado |
 | POST | `/filiais` | Criar nova filial |
 | PUT | `/filiais/{id}` | Atualizar filial |
 | DELETE | `/filiais/{id}` | Remover filial |
 
-### ????? Funcion·rios (`/funcionarios`)
+### üßë‚Äçüíº Funcion√°rios (`/funcionarios`)
 
-| MÈtodo | Endpoint | DescriÁ„o |
+| M√©todo | Endpoint | Descri√ß√£o |
 |--------|----------|-----------|
-| GET | `/funcionarios` | Lista paginada de funcion·rios |
-| GET | `/funcionarios/{id}` | Busca funcion·rio por ID |
+| GET | `/funcionarios` | Lista paginada de funcion√°rios |
+| GET | `/funcionarios/{id}` | Busca funcion√°rio por ID |
 | GET | `/funcionarios/email/{email}` | Busca por email |
-| GET | `/funcionarios/filial/{idFilial}` | Funcion·rios por filial |
-| POST | `/funcionarios` | Criar funcion·rio |
-| PUT | `/funcionarios/{id}` | Atualizar funcion·rio |
-| DELETE | `/funcionarios/{id}` | Remover funcion·rio |
+| GET | `/funcionarios/filial/{idFilial}` | Funcion√°rios por filial |
+| POST | `/funcionarios` | Criar funcion√°rio |
+| PUT | `/funcionarios/{id}` | Atualizar funcion√°rio |
+| DELETE | `/funcionarios/{id}` | Remover funcion√°rio |
 
-### ??? Motos (`/motos`)
+### üèçÔ∏è Motos (`/motos`)
 
-| MÈtodo | Endpoint | DescriÁ„o |
+| M√©todo | Endpoint | Descri√ß√£o |
 |--------|----------|-----------|
-| GET | `/motos` | Lista paginada com filtros avanÁados |
+| GET | `/motos` | Lista paginada com filtros avan√ßados |
 | GET | `/motos/{id}` | Busca moto por ID |
 | GET | `/motos/placa/{placa}` | Busca por placa |
 | GET | `/motos/filial/{idFilial}` | Motos por filial |
@@ -115,19 +116,19 @@ A **MottoMap API** È uma soluÁ„o completa para gerenciamento de frotas de motoci
 | PUT | `/motos/{id}` | Atualizar moto |
 | DELETE | `/motos/{id}` | Remover moto |
 
-## ?? Par‚metros de Consulta
+## üîß Par√¢metros de Consulta
 
-### PaginaÁ„o (Todos os endpoints GET de lista)
+### Pagina√ß√£o (Todos os endpoints GET de lista)
 ```
 ?pageNumber=1&pageSize=10&searchTerm=termo&sortBy=campo&sortDirection=asc
 ```
 
-### Filtros EspecÌficos (Motos)
+### Filtros Espec√≠ficos (Motos)
 ```
 ?marca=Honda&ano=2023&quilometragemMin=1000&quilometragemMax=50000&idFilial=1
 ```
 
-## ?? Exemplos de Uso
+## üíª Exemplos de Uso
 
 ### Criar uma Filial
 ```bash
@@ -135,21 +136,21 @@ POST /api/v1/filiais
 Content-Type: application/json
 
 {
-  "nome": "Filial S„o Paulo - Centro",
+  "nome": "Filial S√£o Paulo - Centro",
   "endereco": "Rua Augusta, 1000",
-  "cidade": "S„o Paulo",
+  "cidade": "S√£o Paulo",
   "estado": "SP",
   "cep": "01310-100"
 }
 ```
 
-### Criar um Funcion·rio
+### Criar um Funcion√°rio
 ```bash
 POST /api/v1/funcionarios
 Content-Type: application/json
 
 {
-  "nome": "Jo„o Silva Santos",
+  "nome": "Jo√£o Silva Santos",
   "email": "joao.silva@mottomap.com",
   "idFilial": 1,
   "funcao": "Gerente Operacional"
@@ -177,14 +178,14 @@ Content-Type: application/json
 GET /api/v1/motos?marca=Honda&ano=2023&pageSize=5&sortBy=modelo
 ```
 
-## ?? ConfiguraÁ„o e InstalaÁ„o
+## ‚öôÔ∏è Configura√ß√£o e Instala√ß√£o
 
-### PrÈ-requisitos
+### Pr√©-requisitos
 - .NET 8.0 SDK
 - Oracle Database (11g ou superior)
 - Visual Studio 2022 ou VS Code
 
-### ConfiguraÁ„o do Banco de Dados
+### Configura√ß√£o do Banco de Dados
 
 1. **Editar `appsettings.json`**:
 ```json
@@ -200,7 +201,7 @@ GET /api/v1/motos?marca=Honda&ano=2023&pageSize=5&sortBy=modelo
 dotnet ef database update
 ```
 
-### Executar a AplicaÁ„o
+### Executar a Aplica√ß√£o
 
 ```bash
 # Restaurar pacotes
@@ -213,48 +214,48 @@ dotnet build
 dotnet run
 ```
 
-A API estar· disponÌvel em:
+A API estar√° dispon√≠vel em:
 - **HTTPS**: https://localhost:7001
 - **HTTP**: http://localhost:5001
 - **Swagger**: https://localhost:7001 (raiz)
 
-## ?? DocumentaÁ„o
+## üìÑ Documenta√ß√£o
 
 ### Swagger/OpenAPI
-A documentaÁ„o interativa est· disponÌvel na raiz da aplicaÁ„o quando executada em modo de desenvolvimento.
+A documenta√ß√£o interativa est√° dispon√≠vel na raiz da aplica√ß√£o quando executada em modo de desenvolvimento.
 
 **Recursos do Swagger**:
-- ?? DocumentaÁ„o completa de todos os endpoints
-- ?? Interface "Try It Out" para testes
-- ?? Schemas detalhados dos DTOs
-- ?? Exemplos de payloads
-- ??? OrganizaÁ„o por tags com emojis
+- üìö Documenta√ß√£o completa de todos os endpoints
+- üß™ Interface "Try It Out" para testes
+- üóÇÔ∏è Schemas detalhados dos DTOs
+- üìù Exemplos de payloads
+- üè∑Ô∏è Organiza√ß√£o por tags com emojis
 
-## ??? ValidaÁıes e Regras de NegÛcio
+## üõ†Ô∏è Valida√ß√µes e Regras de Neg√≥cio
 
-### ValidaÁıes Autom·ticas
-- **Email ˙nico** por funcion·rio
-- **Placa ˙nica** por moto
-- **Formato de email** v·lido
+### Valida√ß√µes Autom√°ticas
+- **Email √∫nico** por funcion√°rio
+- **Placa √∫nica** por moto
+- **Formato de email** v√°lido
 - **Formato de placa** (ABC-1234 ou ABC1D23 Mercosul)
-- **Estado** sempre em mai˙sculo (2 caracteres)
+- **Estado** sempre em mai√∫sculo (2 caracteres)
 - **CEP** no formato 00000-000
 - **Ano** entre 1900-2030
 - **Quilometragem** >= 0
 
 ### Relacionamentos
-- **Funcion·rios** devem pertencer a uma filial existente
+- **Funcion√°rios** devem pertencer a uma filial existente
 - **Motos** devem estar alocadas a uma filial existente
-- **Filiais** n„o podem ser removidas se possuem funcion·rios ou motos
+- **Filiais** n√£o podem ser removidas se possuem funcion√°rios ou motos
 
-## ?? HATEOAS
+## üîó HATEOAS
 
-Todas as respostas incluem links de navegaÁ„o:
+Todas as respostas incluem links de navega√ß√£o:
 
 ```json
 {
   "idFuncionario": 1,
-  "nome": "Jo„o Silva",
+  "nome": "Jo√£o Silva",
   "links": {
     "self": "/api/v1/funcionarios/1",
     "update": "/api/v1/funcionarios/1",
@@ -265,36 +266,36 @@ Todas as respostas incluem links de navegaÁ„o:
 }
 ```
 
-## ?? Status Codes
+## üìà Status Codes
 
-| CÛdigo | Significado | Uso |
+| C√≥digo | Significado | Uso |
 |--------|-------------|-----|
-| 200 | OK | Busca/AtualizaÁ„o bem-sucedida |
+| 200 | OK | Busca/Atualiza√ß√£o bem-sucedida |
 | 201 | Created | Recurso criado com sucesso |
-| 204 | No Content | RemoÁ„o bem-sucedida |
-| 400 | Bad Request | Dados inv·lidos |
-| 404 | Not Found | Recurso n„o encontrado |
+| 204 | No Content | Remo√ß√£o bem-sucedida |
+| 400 | Bad Request | Dados inv√°lidos |
+| 404 | Not Found | Recurso n√£o encontrado |
 | 409 | Conflict | Conflito (email/placa duplicados) |
 
-## ?? Estrutura do Projeto
+## üìÇ Estrutura do Projeto
 
 ```
 MottoMap/
-??? Controllers/           # Controladores da API
-??? Models/               # Entidades do banco de dados
-??? DTOs/                # Objetos de transferÍncia de dados
-??? Mappers/             # Conversores Entity ? DTO
-??? Data/
-?   ??? AppData/         # Contexto do banco
-?   ??? Repository/      # RepositÛrios de acesso a dados
-??? Migrations/          # MigraÁıes do Entity Framework
-??? wwwroot/            # Arquivos est·ticos (CSS do Swagger)
+    Controllers/           # Controladores da API
+    Models/                # Entidades do banco de dados
+    DTOs/                  # Objetos de transfer√™ncia de dados
+    Mappers/               # Conversores Entity ‚Üî DTO
+    Data/
+        AppData/           # Contexto do banco
+        Repository/        # Reposit√≥rios de acesso a dados
+    Migrations/            # Migra√ß√µes do Entity Framework
+    wwwroot/               # Arquivos est√°ticos (CSS do Swagger)
 ```
 
-## ?? Testando a API
+## üß™ Testando a API
 
 ### Usar Swagger UI
-1. Execute a aplicaÁ„o
+1. Execute a aplica√ß√£o
 2. Acesse https://localhost:7001
 3. Use a interface "Try It Out"
 
@@ -303,10 +304,8 @@ MottoMap/
 # Listar filiais
 curl -X GET "https://localhost:7001/api/v1/filiais" -H "accept: application/json"
 
-# Criar funcion·rio
-curl -X POST "https://localhost:7001/api/v1/funcionarios" \
-  -H "Content-Type: application/json" \
-  -d '{
+# Criar funcion√°rio
+curl -X POST "https://localhost:7001/api/v1/funcionarios"   -H "Content-Type: application/json"   -d '{
     "nome": "Maria Santos",
     "email": "maria@mottomap.com",
     "idFilial": 1,
@@ -314,19 +313,19 @@ curl -X POST "https://localhost:7001/api/v1/funcionarios" \
   }'
 ```
 
-## ?? Contribuindo
+## ü§ù Contribuindo
 
 1. Fork o projeto
 2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanÁas (`git commit -m 'Add some AmazingFeature'`)
+3. Commit suas mudan√ßas (`git commit -m 'Add some AmazingFeature'`)
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
-## ?? LicenÁa
+## üìú Licen√ßa
 
-Este projeto est· sob a licenÁa MIT. Veja o arquivo `LICENSE` para mais detalhes.
+Este projeto est√° sob a licen√ßa MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
-## ?? Equipe de Desenvolvimento
+## üë®‚Äçüíª Equipe de Desenvolvimento
 
 - **MottoMap Development Team**
 - **Email**: dev@mottomap.com
@@ -336,8 +335,8 @@ Este projeto est· sob a licenÁa MIT. Veja o arquivo `LICENSE` para mais detalhes
 
 <div align="center">
 
-**??? MottoMap API - Gest„o Inteligente de Frotas de Motos**
+**üöÄ MottoMap API - Gest√£o Inteligente de Frotas de Motos**
 
-*Desenvolvido com ?? usando .NET 8.0 & Oracle Database*
+*Desenvolvido com üíª usando .NET 8.0 & Oracle Database*
 
 </div>
