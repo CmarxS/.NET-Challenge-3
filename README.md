@@ -80,7 +80,7 @@ A **MottoMap API** é uma solução completa para gerenciamento de frotas de mot
 ## 🌐 Endpoints da API
 
 ### Base URL
-- **Development**: `https://localhost:7001/api/v1`
+- **Development**: `https://localhost:5000/api/v1`
 
 ### 🏢 Filiais (`/filiais`)
 
@@ -221,9 +221,7 @@ dotnet run
 ```
 
 A API estará disponível em:
-- **HTTPS**: https://localhost:7001
-- **HTTP**: http://localhost:5001
-- **Swagger**: https://localhost:7001 (raiz)
+- **Swagger**: https://localhost:5000
 
 ## 📄 Documentação
 
@@ -302,7 +300,7 @@ MottoMap/
 
 ### Usar Swagger UI
 1. Execute a aplicação
-2. Acesse https://localhost:7001
+2. Acesse https://localhost:5000
 3. Use a interface "Try It Out"
 
 ### Usar cURL
@@ -318,10 +316,6 @@ curl -X POST "https://localhost:7001/api/v1/funcionarios"   -H "Content-Type: ap
     "funcao": "Analista"
   }'
 ```
-
-## 📜 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
 ---
 
