@@ -3,6 +3,12 @@
 
 Sistema de Gestão de Frota de Motos - API REST completa desenvolvida em .NET 8.0 com Entity Framework Core e Oracle Database.
 
+## 👨‍💻 Equipe de Desenvolvimento
+
+- **RM555997** - Caio Marques
+- **RM558640** - Caio Amarante
+- **RM556325** - Felipe Camargo
+
 ## 📋 Visão Geral
 
 A **MottoMap API** é uma solução completa para gerenciamento de frotas de motocicletas, oferecendo recursos avançados de CRUD, paginação, filtros e HATEOAS para navegabilidade da API.
@@ -313,23 +319,9 @@ curl -X POST "https://localhost:7001/api/v1/funcionarios"   -H "Content-Type: ap
   }'
 ```
 
-## 🤝 Contribuindo
-
-1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
 ## 📜 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-
-## 👨‍💻 Equipe de Desenvolvimento
-
-- **MottoMap Development Team**
-- **Email**: dev@mottomap.com
-- **GitHub**: https://github.com/mottomap/api
 
 ---
 
